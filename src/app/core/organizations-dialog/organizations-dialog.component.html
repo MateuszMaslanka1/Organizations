@@ -1,1 +1,15 @@
-<p>organizations-dialog works!</p>
+<div mat-dialog-content>
+  <header>Organizations</header>
+  <div [className]="'find-words'">
+      <input matInput placeholder="Placeholder">
+  </div>
+  <div [className]="'alphabet'"></div>
+  <section>
+      <div [className]="'border-for-letters'">
+        <div [className]="'letters'" *ngFor="let item of alphabet">{{item}}</div>
+      </div>
+      <div [className]="'border-for-data'">
+        <div [className]="'data'" *ngFor="let item of alphabet">test</div>
+      </div>
+  </section>
+</div>

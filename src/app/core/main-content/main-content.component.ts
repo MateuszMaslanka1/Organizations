@@ -1,5 +1,6 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {OrganizationsDialogComponent} from '../organizations-dialog/organizations-dialog.component';
 
 @Component({
   selector: 'app-main-content',
@@ -14,14 +15,10 @@ export class MainContentComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(MainContentComponent, {
-      width: '550px',
-
+    this.dialog.open(OrganizationsDialogComponent, {
+      width: '1500px',
+      height: '900px',
+      panelClass: 'custom-modalbox'
     });
-  }
-
-  MonoDialogComponent()
-  {
-
   }
 }

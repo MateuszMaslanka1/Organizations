@@ -1,0 +1,53 @@
+::ng-deep .custom-modalbox {
+  .mat-dialog-container {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+@mixin setting-for-border {
+
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+header {
+  @include setting-for-border;
+}
+
+.find-words {
+  @include setting-for-border;
+}
+
+.alphabet {
+  @include setting-for-border;
+}
+
+section {
+  border: 1px solid green;
+  display: flex;
+    .border-for-letters {
+      .letters {
+        width: 12rem;
+        display: flex;
+        align-items: center;
+        p{
+          text-align: center;
+        }
+      }
+    }
+    .border-for-data {
+      width: 100%;
+      .data {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+  }
+}
+
+
+
