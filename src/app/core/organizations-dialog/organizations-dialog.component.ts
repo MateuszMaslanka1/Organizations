@@ -14,7 +14,6 @@ export class OrganizationsDialogComponent implements OnInit {
 
   ngOnInit() {
   }
-
   onNoClick(): void {
     this.dialogRef.close();
   }
