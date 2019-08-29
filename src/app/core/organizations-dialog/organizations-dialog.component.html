@@ -4,12 +4,14 @@
       <input matInput placeholder="Placeholder">
   </div>
   <div [className]="'alphabet'"></div>
-  <section *ngFor="let item of alphabet">
+  <div [className]="'border-for-all'">
+    <section *ngFor="let item of alphabet">
       <div [className]="'border-for-letters'">
         <div [className]="'letters'">{{item}}</div>
       </div>
       <div [className]="'border-for-data'">
         <div [className]="'data'">test</div>
       </div>
-  </section>
+    </section>
+  </div>
 </div>

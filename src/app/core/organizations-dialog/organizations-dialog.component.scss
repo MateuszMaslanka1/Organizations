@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    //max-height: 0;
+  }
+  .mat-dialog-content {
+    max-height: 100%;
   }
 }
 
@@ -24,12 +28,17 @@ header {
 .alphabet {
   @include setting-for-border;
 }
-
-section {
-  display: flex;
-  .border-for-letters {
+.border-for-all{
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  section {
+    display: flex;
+    //border: 1px solid gold;
+    width: 100%;
+    .border-for-letters {
       .letters {
-        border: 1px solid teal;
+    //    border: 1px solid teal;
         font-size: 5rem;
         width: 12rem;
         display: flex;
@@ -37,12 +46,13 @@ section {
       }
     }
     .border-for-data {
-      border: 1px solid red;
+   //   border: 1px solid blue;
       width: 100%;
       .data {
         width: 100%;
         display: flex;
         align-items: center;
+      }
     }
   }
 }
