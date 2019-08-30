@@ -3,14 +3,23 @@
   <div [className]="'find-words'">
       <input matInput placeholder="Placeholder">
   </div>
-  <div [className]="'alphabet'"></div>
+  <div [className]="'alphabet'">
+    <div *ngFor="let item of alphabet">
+      {{item}}
+    </div>
+  </div>
   <div [className]="'border-for-all'">
     <section *ngFor="let item of alphabet">
       <div [className]="'border-for-letters'">
         <div [className]="'letters'">{{item}}</div>
       </div>
       <div [className]="'border-for-data'">
-        <div [className]="'data'">test</div>
+        <div [className]="'data'">
+          <div [className]="'data-details'"></div>
+          <div [className]="'data-details'"></div>
+          <div [className]="'data-details'"></div>
+          <div [className]="'data-details'"></div>
+        </div>
       </div>
     </section>
   </div>

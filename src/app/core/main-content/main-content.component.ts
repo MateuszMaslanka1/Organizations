@@ -17,7 +17,7 @@ export class MainContentComponent implements OnInit {
   openDialog(): void {
     this.dialog.open(OrganizationsDialogComponent, {
       width: '1500px',
-      height: '900px',
+      height: '950px',
       panelClass: 'custom-modalbox'
     });
   }
