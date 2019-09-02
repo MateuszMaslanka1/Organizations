@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {CheckElementsService} from './check-elements.service';
-import {element} from 'protractor';
 
 @Component({
   selector: 'app-organizations-dialog',
@@ -15,6 +14,8 @@ export class OrganizationsDialogComponent implements OnInit {
 
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
   nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense'];
+  listWithAlphabeticGroupName = {};
+  listForObjectKey: string[];
   listForFirstCollumn = [];
   listForSecondCollumn = [];
   listForThirdCollumn = [];
@@ -23,7 +24,8 @@ export class OrganizationsDialogComponent implements OnInit {
   ngOnInit() {
     const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.nameList);
     this.checkElementsService.sortElement(this.nameList);
-    this.checkElementsService.divideOnAlphabeticGroup(this.alphabet, this.nameList);
+    this.listWithAlphabeticGroupName = this.checkElementsService.divideOnAlphabeticGroup(this.alphabet, this.nameList);
+    console.log(this.listForObjectKey = Object.keys(this.listWithAlphabeticGroupName));
 
     this.nameList.forEach(el => {
       if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
