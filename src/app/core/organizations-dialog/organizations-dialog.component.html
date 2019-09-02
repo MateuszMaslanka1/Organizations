@@ -9,16 +9,17 @@
     </div>
   </div>
   <div [className]="'border-for-all'">
-    <section *ngFor="let item of alphabet">
+    <section *ngFor="let item of alphabet; let j = index">
+<!--      <div>{{listForFirstCollumn[3].charAt(0)}}</div>-->
       <div [className]="'border-for-letters'">
         <div [className]="'letters'">{{item}}</div>
       </div>
       <div [className]="'border-for-data'">
         <div [className]="'data'">
-          <div [className]="'data-details'"></div>
-          <div [className]="'data-details'"></div>
-          <div [className]="'data-details'"></div>
-          <div [className]="'data-details'"></div>
+          <div [className]="'data-details'">{{listForFirstCollumn}}</div>
+          <div [className]="'data-details'">{{listForSecondCollumn}}</div>
+          <div [className]="'data-details'">{{listForThirdCollumn}}</div>
+          <div [className]="'data-details'">{{listForFourthCollumn}}</div>
         </div>
       </div>
     </section>
