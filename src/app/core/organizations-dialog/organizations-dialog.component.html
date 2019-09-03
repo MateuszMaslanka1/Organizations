@@ -9,24 +9,32 @@
     </div>
   </div>
   <div [className]="'border-for-all'">
-    <section *ngFor="let item of alphabet; let j = index">
+    <section *ngFor="let item of alphabet">
       <div [className]="'border-for-letters'">
         <div [className]="'letters'">{{item}}</div>
       </div>
       <div [className]="'border-for-data'">
         <div [className]="'data'">
           <ng-container *ngIf="objForListWithDivideElements[item]">
-            <div [className]="'data-details'">
-                {{objForListWithDivideElements[item].divideElementListOne}}
+            <div [className]="'divide-data'">
+              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne">
+                {{item}}
+              </div>
             </div>
-            <div [className]="'data-details'">
-              {{objForListWithDivideElements[item].divideElementListTwo}}
+            <div [className]="'divide-data'">
+              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListTwo">
+                {{item}}
+              </div>
             </div>
-            <div [className]="'data-details'">
-              {{objForListWithDivideElements[item].divideElementListThree}}
+            <div [className]="'divide-data'">
+              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListThree">
+                {{item}}
+              </div>
             </div>
-            <div [className]="'data-details'">
-              {{objForListWithDivideElements[item].divideElementListFour}}
+            <div [className]="'divide-data'">
+              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListFour">
+              {{item}}
+              </div>
             </div>
           </ng-container>
         </div>

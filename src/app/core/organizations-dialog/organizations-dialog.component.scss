@@ -6,7 +6,9 @@
   }
   .mat-dialog-content {
     max-height: 100%;
-   // overflow: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
 }
 
@@ -19,6 +21,7 @@
 
 header {
   @include setting-for-border;
+  background-color: lightskyblue;
 }
 
 .find-words {
@@ -31,7 +34,8 @@ header {
 }
 .border-for-all{
   width: 100%;
-  height: 100%;
+  height: 42vw;
+  overflow: auto;
   section {
     display: flex;
     //border: 1px solid gold;
@@ -46,16 +50,21 @@ header {
       }
     }
     .border-for-data {
-      border: 1px solid blue;
+    // border: 1px solid blue;
       width: 100%;
       .data {
+      //  border: 1px solid green;
         width: 100%;
         display: flex;
         align-items: center;
+        .divide-data {
+          // border: 1px solid red;
+          width: 100%;
           .data-details {
-            //border: 1px solid red;
+            // border: 1px solid red;
             width: 100%;
           }
+        }
       }
     }
   }

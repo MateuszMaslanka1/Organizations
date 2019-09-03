@@ -13,9 +13,10 @@ export class OrganizationsDialogComponent implements OnInit {
               private checkElementsService: CheckElementsService) { }
 
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
-  nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense'];
+  nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense',
+    'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
+    'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense'];
   listWithAlphabeticGroupName = {};
-  listForObjectKey: string[] = [];
   listForFirstCollumn = [];
   listForSecondCollumn = [];
   listForThirdCollumn = [];
@@ -23,12 +24,12 @@ export class OrganizationsDialogComponent implements OnInit {
   objForListWithDivideElements = [];
 
   ngOnInit() {
-    const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.nameList);
     this.checkElementsService.sortElement(this.nameList);
     this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, this.nameList);
-    
+
     Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
       this.nameList = this.listWithAlphabeticGroupName[el].listWithName;
+      const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.nameList);
       this.nameList.forEach(el2 => {
         if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
           this.listForFirstCollumn.push(el2);
@@ -47,8 +48,6 @@ export class OrganizationsDialogComponent implements OnInit {
         divideElementListThree: this.listForThirdCollumn,
         divideElementListFour: this.listForFourthCollumn,
       };
-      console.log(this.objForListWithDivideElements);
-      this.listForObjectKey.push(el);
       this.listForFirstCollumn = [];
       this.listForSecondCollumn = [];
       this.listForThirdCollumn = [];
