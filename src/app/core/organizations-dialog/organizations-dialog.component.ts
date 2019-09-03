@@ -15,28 +15,44 @@ export class OrganizationsDialogComponent implements OnInit {
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
   nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense'];
   listWithAlphabeticGroupName = {};
-  listForObjectKey: string[];
+  listForObjectKey: string[] = [];
   listForFirstCollumn = [];
   listForSecondCollumn = [];
   listForThirdCollumn = [];
   listForFourthCollumn = [];
+  objForListWithDivideElements = [];
 
   ngOnInit() {
     const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.nameList);
     this.checkElementsService.sortElement(this.nameList);
-    this.listWithAlphabeticGroupName = this.checkElementsService.divideOnAlphabeticGroup(this.alphabet, this.nameList);
-    console.log(this.listForObjectKey = Object.keys(this.listWithAlphabeticGroupName));
+    this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, this.nameList);
+    
+    Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
+      this.nameList = this.listWithAlphabeticGroupName[el].listWithName;
+      this.nameList.forEach(el2 => {
+        if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
+          this.listForFirstCollumn.push(el2);
+        } else if (this.listForSecondCollumn.length < quantityOfElementInColumn) {
+          this.listForSecondCollumn.push(el2);
+        } else if (this.listForThirdCollumn.length < quantityOfElementInColumn) {
+          this.listForThirdCollumn.push(el2);
+        } else if (this.listForFourthCollumn.length < quantityOfElementInColumn) {
+          this.listForFourthCollumn.push(el2);
+        }
+      });
 
-    this.nameList.forEach(el => {
-      if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
-        this.listForFirstCollumn.push(el);
-      } else if (this.listForSecondCollumn.length < quantityOfElementInColumn) {
-        this.listForSecondCollumn.push(el);
-      } else if (this.listForThirdCollumn.length < quantityOfElementInColumn) {
-        this.listForThirdCollumn.push(el);
-      } else if (this.listForFourthCollumn.length < quantityOfElementInColumn) {
-        this.listForFourthCollumn.push(el);
-      }
+      this.objForListWithDivideElements[el] = {
+        divideElementListOne: this.listForFirstCollumn,
+        divideElementListTwo: this.listForSecondCollumn,
+        divideElementListThree: this.listForThirdCollumn,
+        divideElementListFour: this.listForFourthCollumn,
+      };
+      console.log(this.objForListWithDivideElements);
+      this.listForObjectKey.push(el);
+      this.listForFirstCollumn = [];
+      this.listForSecondCollumn = [];
+      this.listForThirdCollumn = [];
+      this.listForFourthCollumn = [];
     });
   }
 

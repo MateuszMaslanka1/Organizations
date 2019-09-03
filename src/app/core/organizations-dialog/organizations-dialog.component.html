@@ -14,11 +14,21 @@
         <div [className]="'letters'">{{item}}</div>
       </div>
       <div [className]="'border-for-data'">
-        <div [className]="'data'" *ngIf="item === listForObjectKey[j]">
-          <div [className]="'data-details'">{{listForFirstCollumn}}</div>
-          <div [className]="'data-details'">{{listForSecondCollumn}}</div>
-          <div [className]="'data-details'">{{listForThirdCollumn}}</div>
-          <div [className]="'data-details'">{{listForFourthCollumn}}</div>
+        <div [className]="'data'">
+          <ng-container *ngIf="objForListWithDivideElements[item]">
+            <div [className]="'data-details'">
+                {{objForListWithDivideElements[item].divideElementListOne}}
+            </div>
+            <div [className]="'data-details'">
+              {{objForListWithDivideElements[item].divideElementListTwo}}
+            </div>
+            <div [className]="'data-details'">
+              {{objForListWithDivideElements[item].divideElementListThree}}
+            </div>
+            <div [className]="'data-details'">
+              {{objForListWithDivideElements[item].divideElementListFour}}
+            </div>
+          </ng-container>
         </div>
       </div>
     </section>

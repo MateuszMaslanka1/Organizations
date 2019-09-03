@@ -1,3 +1,5 @@
+import { Injectable } from '@angular/core';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -5,7 +7,7 @@ export class CheckElementsService {
 
   constructor() { }
 
-  obj = {};
+  alphabeticallyGoupedNames = {};
 
   lenghtOfColumn(alphabet) {
     return Math.ceil(alphabet.length / 4);
@@ -16,19 +18,17 @@ export class CheckElementsService {
     return nameList;
   }
 
-  divideOnAlphabeticGroup(alphabet: string[] , nameList: string[]) {
-    let listWithAlphabeticGroup = [];
-    alphabet.forEach(element => {
-      listWithAlphabeticGroup = [];
-      nameList.forEach(el2 => {
-        if (element.toLocaleLowerCase() === el2.charAt(0)) {
-          listWithAlphabeticGroup.push(el2);
-          this.obj[element] = {listWithName: listWithAlphabeticGroup};
+  groupAlphabetically(alphabet: string[] , nameList: string[]) {
+    alphabet.forEach(letter => {
+     const alphabeticGroup = [];
+     nameList.forEach(el2 => {
+        if (letter.toLocaleLowerCase() === el2.charAt(0)) {
+          alphabeticGroup.push(el2);
+          this.alphabeticallyGoupedNames[letter] = {listWithName: alphabeticGroup};
         }
       });
     });
-    return this.obj;
+    console.log(this.alphabeticallyGoupedNames);
+    return this.alphabeticallyGoupedNames;
   }
 }
-
-import { Injectable } from '@angular/core';
