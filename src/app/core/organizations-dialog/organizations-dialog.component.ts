@@ -15,7 +15,9 @@ export class OrganizationsDialogComponent implements OnInit {
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
   nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense',
     'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
-    'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense'];
+    'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense',
+    'wsd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
+    'wins', 'wretense', 'asd', 'walm', 'part', 'wond', 'prevalent', 'paris', 'wins', 'pretense'];
   listWithAlphabeticGroupName = {};
   listForFirstCollumn = [];
   listForSecondCollumn = [];
