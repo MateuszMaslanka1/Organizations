@@ -19,6 +19,7 @@ export class CheckElementsService {
   }
 
   groupAlphabetically(alphabet: string[] , nameList: string[]) {
+    this.alphabeticallyGoupedNames = {};
     alphabet.forEach(letter => {
      const alphabeticGroup = [];
      nameList.forEach(el2 => {
@@ -28,7 +29,16 @@ export class CheckElementsService {
         }
       });
     });
-    console.log(this.alphabeticallyGoupedNames);
     return this.alphabeticallyGoupedNames;
+  }
+
+  findWords(wordsToFind: string, nameList: string[]) {
+    const listForFindName: string[] = [];
+    nameList.forEach(word => {
+      if (word.search(wordsToFind) !== -1) {
+        listForFindName.push(word);
+      }
+    });
+    return listForFindName;
   }
 }

@@ -19,6 +19,18 @@
   align-items: center;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darkgray;
+}
+
 header {
   @include setting-for-border;
   background-color: lightskyblue;
@@ -29,7 +41,7 @@ header {
 }
 
 .alphabet {
- // border: 1px solid red;
+  // border: 1px solid red;
   @include setting-for-border;
 }
 .border-for-all{
@@ -38,7 +50,7 @@ header {
   overflow: auto;
   section {
     display: flex;
-    //border: 1px solid gold;
+   // border: 1px solid gold;
     width: 100%;
     .border-for-letters {
       .letters {
@@ -50,10 +62,10 @@ header {
       }
     }
     .border-for-data {
-    // border: 1px solid blue;
+     // border: 1px solid blue;
       width: 100%;
       .data {
-      //  border: 1px solid green;
+       // border: 1px solid green;
         width: 100%;
         display: flex;
         align-items: center;

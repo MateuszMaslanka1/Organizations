@@ -1,7 +1,7 @@
 <div mat-dialog-content>
   <header>Organizations</header>
   <div [className]="'find-words'">
-      <input matInput placeholder="Placeholder">
+      <input matInput placeholder="Placeholder" [(ngModel)]="wordsToFind" (input)="findWords()">
   </div>
   <div [className]="'alphabet'">
     <div *ngFor="let item of alphabet">

@@ -15,7 +15,8 @@ export class OrganizationsDialogComponent implements OnInit {
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
   nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense',
     'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
-    'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense',
+    'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond',
+    'prevalent', 'paris', 'pins', 'pretense',
     'wsd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'wins', 'wretense', 'asd', 'walm', 'part', 'wond', 'prevalent', 'paris', 'wins', 'pretense'];
   listWithAlphabeticGroupName = {};
@@ -24,15 +25,26 @@ export class OrganizationsDialogComponent implements OnInit {
   listForThirdCollumn = [];
   listForFourthCollumn = [];
   objForListWithDivideElements = [];
+  wordsToFind: string;
 
   ngOnInit() {
-    this.checkElementsService.sortElement(this.nameList);
-    this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, this.nameList);
+    this.sortName();
+    this.groupAlphabeticlly();
+    this.divideInCollumn();
+  }
 
+  sortName() {
+    this.checkElementsService.sortElement(this.nameList);
+  }
+
+  groupAlphabeticlly() {
+    this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, this.nameList);
+  }
+
+  divideInCollumn() {
     Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
-      this.nameList = this.listWithAlphabeticGroupName[el].listWithName;
-      const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.nameList);
-      this.nameList.forEach(el2 => {
+      const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.listWithAlphabeticGroupName[el].listWithName);
+      this.listWithAlphabeticGroupName[el].listWithName.forEach(el2 => {
         if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
           this.listForFirstCollumn.push(el2);
         } else if (this.listForSecondCollumn.length < quantityOfElementInColumn) {
@@ -43,7 +55,6 @@ export class OrganizationsDialogComponent implements OnInit {
           this.listForFourthCollumn.push(el2);
         }
       });
-
       this.objForListWithDivideElements[el] = {
         divideElementListOne: this.listForFirstCollumn,
         divideElementListTwo: this.listForSecondCollumn,
@@ -55,6 +66,15 @@ export class OrganizationsDialogComponent implements OnInit {
       this.listForThirdCollumn = [];
       this.listForFourthCollumn = [];
     });
+  }
+
+  findWords() {
+    this.objForListWithDivideElements = [];
+    const listWithFindWords = this.checkElementsService.findWords(this.wordsToFind, this.nameList);
+    console.log(listWithFindWords);
+    this.checkElementsService.sortElement(listWithFindWords);
+    this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, listWithFindWords);
+    this.divideInCollumn();
   }
 
   onNoClick(): void {

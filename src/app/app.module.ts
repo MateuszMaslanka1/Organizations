@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { OrganizationsDialogComponent } from './core/organizations-dialog/organizations-dialog.component';
 import {MatDialogModule, MatFormFieldModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {MatDialogModule, MatFormFieldModule} from '@angular/material';
     MatCheckboxModule,
     MatDialogModule,
     MatFormFieldModule,
+    FormsModule,
   ],
   exports: [MatButtonModule, MatCheckboxModule],
   providers: [],
