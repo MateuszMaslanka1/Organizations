@@ -35,7 +35,7 @@ export class CheckElementsService {
   findWords(wordsToFind: string, nameList: string[]) {
     const listForFindName: string[] = [];
     nameList.forEach(word => {
-      if (word.search(wordsToFind) !== -1) {
+      if (word.includes(wordsToFind)) {
         listForFindName.push(word);
       }
     });
