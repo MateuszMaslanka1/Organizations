@@ -71,7 +71,6 @@ export class OrganizationsDialogComponent implements OnInit {
   findWords() {
     this.objForListWithDivideElements = [];
     const listWithFindWords = this.checkElementsService.findWords(this.wordsToFind, this.nameList);
-    console.log(listWithFindWords);
     this.checkElementsService.sortElement(listWithFindWords);
     this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, listWithFindWords);
     this.divideInCollumn();
