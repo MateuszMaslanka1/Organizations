@@ -13,7 +13,7 @@ export class OrganizationsDialogComponent implements OnInit {
               private checkElementsService: CheckElementsService) { }
 
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
-  nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'o', 'op', 'r', 'cvb', 'fgh', 'ghj', 'jkl',
+  nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'o', 'op', 'r', 'cvb', 'fgh', 'ghj', 'jkl', 'n',
     'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond',
     'prevalent', 'paris', 'pins', 'pretense', 'l', 'dom', 'ert', 'tyu', 'uio', 'sdf', 'fgh', 'fgh', 'zxc', 'qwe', 'sdf', 'ert',
@@ -24,7 +24,7 @@ export class OrganizationsDialogComponent implements OnInit {
   listForSecondCollumn = [];
   listForThirdCollumn = [];
   listForFourthCollumn = [];
-  objForListWithDivideElements = [];
+  objForListWithDivideElements = {};
   alphabetForCollumn = [];
   wordsToFind: string;
 
@@ -73,13 +73,12 @@ export class OrganizationsDialogComponent implements OnInit {
   }
 
   findWords() {
-    this.objForListWithDivideElements = [];
+    this.objForListWithDivideElements = {};
     this.alphabetForCollumn = [];
     const listWithFindWords = this.checkElementsService.findWords(this.wordsToFind, this.nameList);
     this.checkElementsService.sortElement(listWithFindWords);
     this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, listWithFindWords);
     Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
-      console.log(el);
       this.alphabetForCollumn.push(el);
     });
     this.divideInCollumn();

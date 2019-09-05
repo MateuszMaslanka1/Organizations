@@ -5,7 +5,9 @@
   </div>
   <div [className]="'alphabet'">
     <div [className]="'border-inside-for-alphabet'">
-    <p *ngFor="let item of alphabet">{{item}}</p>
+    <ng-container *ngFor="let item of alphabet">
+        <p [class.hidden-letter]="objForListWithDivideElements[item]">{{item}}</p>
+    </ng-container>
     </div>
   </div>
   <div [className]="'border-for-all'">

@@ -79,6 +79,9 @@ header {
     p:first-child {
       padding-left: 0;
     }
+    .hidden-letter {
+      color: lightgray;
+    }
   }
   background: white;
 }
@@ -100,6 +103,7 @@ header {
     }
     .border-for-data {
      // border: 1px solid blue;
+      padding-top: 0.6rem;
       width: 100%;
       .data {
        // border: 1px solid green;
@@ -111,6 +115,7 @@ header {
           width: 100%;
           .data-details {
             // border: 1px solid red;
+            font-size: 1.2rem;
             width: 100%;
           }
         }
