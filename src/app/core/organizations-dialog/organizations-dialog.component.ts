@@ -16,7 +16,7 @@ export class OrganizationsDialogComponent implements OnInit {
   nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'o', 'op', 'r', 'cvb', 'fgh', 'ghj', 'jkl',
     'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond',
-    'prevalent', 'paris', 'pins', 'pretense', 'l',
+    'prevalent', 'paris', 'pins', 'pretense', 'l', 'dom', 'ert', 'tyu', 'uio', 'sdf', 'fgh', 'fgh', 'zxc', 'qwe', 'sdf', 'ert',
     'wsd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'wins', 'wretense', 'asd', 'walm', 'part', 'wond', 'prevalent', 'paris', 'wins', 'pretense'];
   listWithAlphabeticGroupName = {};

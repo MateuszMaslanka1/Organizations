@@ -65,16 +65,21 @@ header {
 .alphabet {
   @include setting-for-border;
   @include border-for-part;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  .border-inside-for-alphabet {
+   // border: 1px solid blue;
     display: flex;
     justify-content: center;
     p {
-      font-size: 2rem;
+      font-size: 1.5rem;
       padding-left: 2rem;
+      margin: 0;
     }
     p:first-child {
       padding-left: 0;
     }
+  }
   background: white;
 }
 .border-for-all{

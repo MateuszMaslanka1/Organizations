@@ -4,7 +4,9 @@
       <input matInput placeholder="Placeholder" [(ngModel)]="wordsToFind" (input)="findWords()">
   </div>
   <div [className]="'alphabet'">
-      <p *ngFor="let item of alphabet">{{item}}</p>
+    <div [className]="'border-inside-for-alphabet'">
+    <p *ngFor="let item of alphabet">{{item}}</p>
+    </div>
   </div>
   <div [className]="'border-for-all'">
     <section *ngFor="let item of alphabetForCollumn">
@@ -36,6 +38,7 @@
             </div>
           </ng-container>
         </div>
+        <hr>
       </div>
     </section>
   </div>
