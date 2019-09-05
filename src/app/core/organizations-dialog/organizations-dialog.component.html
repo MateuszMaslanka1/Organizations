@@ -1,15 +1,13 @@
 <div mat-dialog-content>
-  <header>Organizations</header>
+  <header><h4>Organizations</h4></header>
   <div [className]="'find-words'">
       <input matInput placeholder="Placeholder" [(ngModel)]="wordsToFind" (input)="findWords()">
   </div>
   <div [className]="'alphabet'">
-    <div *ngFor="let item of alphabet">
-      {{item}}
-    </div>
+      <p *ngFor="let item of alphabet">{{item}}</p>
   </div>
   <div [className]="'border-for-all'">
-    <section *ngFor="let item of alphabet">
+    <section *ngFor="let item of alphabetForCollumn">
       <div [className]="'border-for-letters'">
         <div [className]="'letters'">{{item}}</div>
       </div>

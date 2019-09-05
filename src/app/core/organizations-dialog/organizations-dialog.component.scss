@@ -19,6 +19,14 @@
   align-items: center;
 }
 
+@mixin margin-for-element {
+  margin-left: 2rem;
+}
+
+@mixin border-for-part {
+  border: 1px solid darkgray;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -33,16 +41,41 @@
 
 header {
   @include setting-for-border;
-  background-color: lightskyblue;
+  @include border-for-part;
+  font-size: 1.5rem;
+  background-color: #cce7fa;
+  h4 {
+      @include margin-for-element;
+    }
 }
 
 .find-words {
   @include setting-for-border;
+  @include border-for-part;
+  background: whitesmoke;
+  input{
+    @include margin-for-element;
+    @include border-for-part;
+    width: 19rem;
+    height: 1.5rem;
+    border-radius: 4px;
+  }
 }
 
 .alphabet {
-  // border: 1px solid red;
   @include setting-for-border;
+  @include border-for-part;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    p {
+      font-size: 2rem;
+      padding-left: 2rem;
+    }
+    p:first-child {
+      padding-left: 0;
+    }
+  background: white;
 }
 .border-for-all{
   width: 100%;
@@ -50,7 +83,6 @@ header {
   overflow: auto;
   section {
     display: flex;
-   // border: 1px solid gold;
     width: 100%;
     .border-for-letters {
       .letters {

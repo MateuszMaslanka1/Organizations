@@ -13,7 +13,7 @@ export class OrganizationsDialogComponent implements OnInit {
               private checkElementsService: CheckElementsService) { }
 
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
-  nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense',
+  nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'o', 'op', 'r', 'cvb', 'fgh', 'ghj', 'jkl',
     'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond',
     'prevalent', 'paris', 'pins', 'pretense',
@@ -25,6 +25,7 @@ export class OrganizationsDialogComponent implements OnInit {
   listForThirdCollumn = [];
   listForFourthCollumn = [];
   objForListWithDivideElements = [];
+  alphabetForCollumn = [];
   wordsToFind: string;
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class OrganizationsDialogComponent implements OnInit {
 
   divideInCollumn() {
     Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
+      this.alphabetForCollumn.push(el);
       const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.listWithAlphabeticGroupName[el].listWithName);
       this.listWithAlphabeticGroupName[el].listWithName.forEach(el2 => {
         if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
