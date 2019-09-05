@@ -16,7 +16,7 @@ export class OrganizationsDialogComponent implements OnInit {
   nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'o', 'op', 'r', 'cvb', 'fgh', 'ghj', 'jkl',
     'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond',
-    'prevalent', 'paris', 'pins', 'pretense',
+    'prevalent', 'paris', 'pins', 'pretense', 'l',
     'wsd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'wins', 'wretense', 'asd', 'walm', 'part', 'wond', 'prevalent', 'paris', 'wins', 'pretense'];
   listWithAlphabeticGroupName = {};
@@ -40,11 +40,13 @@ export class OrganizationsDialogComponent implements OnInit {
 
   groupAlphabeticlly() {
     this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, this.nameList);
+    Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
+      this.alphabetForCollumn.push(el);
+    });
   }
 
   divideInCollumn() {
     Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
-      this.alphabetForCollumn.push(el);
       const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.listWithAlphabeticGroupName[el].listWithName);
       this.listWithAlphabeticGroupName[el].listWithName.forEach(el2 => {
         if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
@@ -72,9 +74,14 @@ export class OrganizationsDialogComponent implements OnInit {
 
   findWords() {
     this.objForListWithDivideElements = [];
+    this.alphabetForCollumn = [];
     const listWithFindWords = this.checkElementsService.findWords(this.wordsToFind, this.nameList);
     this.checkElementsService.sortElement(listWithFindWords);
     this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, listWithFindWords);
+    Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
+      console.log(el);
+      this.alphabetForCollumn.push(el);
+    });
     this.divideInCollumn();
   }
 
