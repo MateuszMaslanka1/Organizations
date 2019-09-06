@@ -105,18 +105,18 @@ export class OrganizationsDialogComponent implements OnInit {
        this.line = div.nativeElement.getBoundingClientRect().top;
        this.objForChangeColorLine[index] = {line: this.line};
      });
-     console.log(this.objForChangeColorLetter);
-     console.log(this.objForChangeColorLine);
+   //  console.log(this.objForChangeColorLetter);
+   //  console.log(this.objForChangeColorLine);
 
      Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
       // console.log(el, this.objForChangeColorLetter[el].letter);
       // console.log(this.objForChangeColorLine[index].line);
-       if (this.objForChangeColorLetter[el].letter < 149 && this.objForChangeColorLine[index].line > 144) {
+       if (this.objForChangeColorLetter[el].letter < 150 && this.objForChangeColorLine[index].line > 135) {
          this.getLetter = el;
        }
      });
      console.log(this.getLetter);
-    // console.log(this.objForChangeColorLine);
+     // console.log(this.objForChangeColorLine);
   }
 
   onNoClick(): void {
