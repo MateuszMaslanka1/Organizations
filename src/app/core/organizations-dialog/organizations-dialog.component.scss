@@ -82,6 +82,9 @@ header {
     .hidden-letter {
       color: lightgray;
     }
+    .change-style-letter {
+      color: red;
+    }
   }
   background: white;
 }
@@ -106,6 +109,9 @@ header {
      // border: 1px solid blue;
       padding-top: 0.6rem;
       width: 100%;
+      hr {
+        margin-top: 2rem;
+      }
       .data {
        // border: 1px solid green;
         width: 100%;

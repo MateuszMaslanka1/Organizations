@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {CheckElementsService} from './check-elements.service';
 
@@ -17,8 +17,11 @@ export class OrganizationsDialogComponent implements OnInit {
     'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
     'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond',
     'prevalent', 'paris', 'pins', 'pretense', 'l', 'dom', 'ert', 'tyu', 'uio', 'sdf', 'fgh', 'fgh', 'zxc', 'qwe', 'sdf', 'ert',
-    'wsd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent', 'paris',
-    'wins', 'wretense', 'asd', 'walm', 'part', 'wond', 'prevalent', 'paris', 'wins', 'pretense'];
+    'wsd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'asd', 'palm', 'part', 'pond', 'prevalent',
+    'wins', 'wretense', 'asd', 'walm', 'part', 'wond', 'wins', 'pretense', 'walm', 'part', 'wond', 'wins',
+    'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond',
+    'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm',
+    'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins'];
   listWithAlphabeticGroupName = {};
   listForFirstCollumn = [];
   listForSecondCollumn = [];
@@ -27,6 +30,14 @@ export class OrganizationsDialogComponent implements OnInit {
   objForListWithDivideElements = {};
   alphabetForCollumn = [];
   wordsToFind: string;
+  objForChangeColorLetter = {};
+  objForChangeColorLine = {};
+  line: string;
+  letter: string;
+  @ViewChildren('smallLetterPosition') smallLetterPosition: QueryList<ElementRef>;
+  @ViewChildren('letterPosition') letterPosition: QueryList<ElementRef>;
+  @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
+
 
   ngOnInit() {
     this.sortName();
@@ -37,6 +48,7 @@ export class OrganizationsDialogComponent implements OnInit {
   sortName() {
     this.checkElementsService.sortElement(this.nameList);
   }
+
 
   groupAlphabeticlly() {
     this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, this.nameList);
@@ -82,6 +94,23 @@ export class OrganizationsDialogComponent implements OnInit {
       this.alphabetForCollumn.push(el);
     });
     this.divideInCollumn();
+  }
+
+  test() {
+     this.letterPosition.forEach((div: ElementRef) => {
+       this.letter = div.nativeElement.getBoundingClientRect().top;
+       this.objForChangeColorLetter[div.nativeElement.innerText] = {letter: this.letter};
+     });
+     this.linePosition.forEach((div: ElementRef, index) => {
+       this.line = div.nativeElement.getBoundingClientRect().top;
+       this.objForChangeColorLine[index] = {line: this.line};
+     });
+    // console.log(this.objForChangeColorLetter);
+    // console.log(this.objForChangeColorLine);
+
+     Object.keys(this.objForChangeColorLetter).forEach(el => {
+       console.log(el, this.objForChangeColorLetter[el].letter);
+     });
   }
 
   onNoClick(): void {

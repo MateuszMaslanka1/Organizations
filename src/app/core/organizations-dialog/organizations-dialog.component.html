@@ -8,10 +8,10 @@
         <p *ngFor="let item of alphabet" [class.hidden-letter]="!objForListWithDivideElements[item]">{{item}}</p>
     </div>
   </div>
-  <div [className]="'border-for-all'">
+  <div [className]="'border-for-all'" (click)="test()">
     <section *ngFor="let item of alphabetForCollumn">
       <div [className]="'border-for-letters'">
-        <div [className]="'letters'">{{item}}</div>
+        <div [className]="'letters'" #letterPosition>{{item}}</div>
       </div>
       <div [className]="'border-for-data'">
         <div [className]="'data'">
@@ -38,7 +38,7 @@
             </div>
           </ng-container>
         </div>
-        <hr>
+        <hr #linePosition>
       </div>
     </section>
   </div>
