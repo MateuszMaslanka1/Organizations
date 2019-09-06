@@ -1,4 +1,4 @@
-import {Component, ElementRef, Inject, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {CheckElementsService} from './check-elements.service';
 
@@ -37,7 +37,6 @@ export class OrganizationsDialogComponent implements OnInit {
   @ViewChildren('smallLetterPosition') smallLetterPosition: QueryList<ElementRef>;
   @ViewChildren('letterPosition') letterPosition: QueryList<ElementRef>;
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
-
 
   ngOnInit() {
     this.sortName();
@@ -105,12 +104,17 @@ export class OrganizationsDialogComponent implements OnInit {
        this.line = div.nativeElement.getBoundingClientRect().top;
        this.objForChangeColorLine[index] = {line: this.line};
      });
-    // console.log(this.objForChangeColorLetter);
+     console.log(this.objForChangeColorLetter);
     // console.log(this.objForChangeColorLine);
 
-     Object.keys(this.objForChangeColorLetter).forEach(el => {
-       console.log(el, this.objForChangeColorLetter[el].letter);
+     Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
+      // console.log(el, this.objForChangeColorLetter[el].letter);
+      // console.log(this.objForChangeColorLine[index].line);
+       if (this.objForChangeColorLetter[el].letter < 145 && this.objForChangeColorLine[index].line > 155) {
+          console.log(el);
+       }
      });
+   // console.log(this.objForChangeColorLine);
   }
 
   onNoClick(): void {
