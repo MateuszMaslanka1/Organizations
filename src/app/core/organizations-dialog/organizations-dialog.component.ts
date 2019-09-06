@@ -34,6 +34,7 @@ export class OrganizationsDialogComponent implements OnInit {
   objForChangeColorLine = {};
   line: string;
   letter: string;
+  getLetter: string;
   @ViewChildren('smallLetterPosition') smallLetterPosition: QueryList<ElementRef>;
   @ViewChildren('letterPosition') letterPosition: QueryList<ElementRef>;
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
@@ -105,16 +106,17 @@ export class OrganizationsDialogComponent implements OnInit {
        this.objForChangeColorLine[index] = {line: this.line};
      });
      console.log(this.objForChangeColorLetter);
-    // console.log(this.objForChangeColorLine);
+     console.log(this.objForChangeColorLine);
 
      Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
       // console.log(el, this.objForChangeColorLetter[el].letter);
       // console.log(this.objForChangeColorLine[index].line);
-       if (this.objForChangeColorLetter[el].letter < 145 && this.objForChangeColorLine[index].line > 155) {
-          console.log(el);
+       if (this.objForChangeColorLetter[el].letter < 149 && this.objForChangeColorLine[index].line > 144) {
+         this.getLetter = el;
        }
      });
-   // console.log(this.objForChangeColorLine);
+     console.log(this.getLetter);
+    // console.log(this.objForChangeColorLine);
   }
 
   onNoClick(): void {
