@@ -8,7 +8,7 @@
         <p *ngFor="let item of alphabet" [class.hidden-letter]="!objForListWithDivideElements[item]">{{item}}</p>
     </div>
   </div>
-  <div [className]="'border-for-all'" (scroll)="test()">
+  <div [className]="'border-for-all'" (scroll)="FindLetterToChange()">
     <section *ngFor="let item of alphabetForCollumn">
       <div [className]="'border-for-letters'">
         <div [className]="'letters'" #letterPosition>{{item}}</div>
