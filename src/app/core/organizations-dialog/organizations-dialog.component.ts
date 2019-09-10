@@ -107,7 +107,7 @@ export class OrganizationsDialogComponent implements OnInit {
      });
 
      Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
-       if (Math.ceil(this.objForChangeColorLetter[el].letter) < 153 && Math.ceil(this.objForChangeColorLine[index].line) > 129) {
+       if (Math.ceil(this.objForChangeColorLetter[el].letter) < 159 && Math.ceil(this.objForChangeColorLine[index].line) > 129) {
          console.log(Math.ceil(this.objForChangeColorLetter[el].letter));
          console.log(Math.ceil(this.objForChangeColorLine[index].line));
          this.getLetter = el;
