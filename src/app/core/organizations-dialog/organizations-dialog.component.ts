@@ -35,7 +35,7 @@ export class OrganizationsDialogComponent implements OnInit {
   line: string;
   letter: string;
   getLetter = 'A';
-  @ViewChildren('smallLetterPosition') smallLetterPosition: QueryList<ElementRef>;
+   // @ViewChildren('smallLetterPosition') smallLetterPosition: QueryList<ElementRef>;
   @ViewChildren('letterPosition') letterPosition: QueryList<ElementRef>;
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
 
@@ -106,12 +106,11 @@ export class OrganizationsDialogComponent implements OnInit {
      });
 
      Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
-       if (Math.ceil(this.objForChangeColorLetter[el].letter) < 159 && Math.ceil(this.objForChangeColorLine[index].line) > 129) {
+       if (Math.ceil(this.objForChangeColorLetter[el].letter) < 159 && Math.ceil(this.objForChangeColorLine[index].line) > 160) {
           this.getLetter = el;
        }
      });
   }
-
   onNoClick(): void {
     this.dialogRef.close();
   }
