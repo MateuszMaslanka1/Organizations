@@ -49,7 +49,6 @@ export class OrganizationsDialogComponent implements OnInit {
     this.checkElementsService.sortElement(this.nameList);
   }
 
-
   groupAlphabeticlly() {
     this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, this.nameList);
     Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
@@ -108,12 +107,9 @@ export class OrganizationsDialogComponent implements OnInit {
 
      Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
        if (Math.ceil(this.objForChangeColorLetter[el].letter) < 159 && Math.ceil(this.objForChangeColorLine[index].line) > 129) {
-         console.log(Math.ceil(this.objForChangeColorLetter[el].letter));
-         console.log(Math.ceil(this.objForChangeColorLine[index].line));
-         this.getLetter = el;
+          this.getLetter = el;
        }
      });
-     console.log(this.getLetter);
   }
 
   onNoClick(): void {
