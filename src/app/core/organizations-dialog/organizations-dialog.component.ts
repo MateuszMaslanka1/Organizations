@@ -117,8 +117,7 @@ export class OrganizationsDialogComponent implements OnInit {
   goToLetter(getLetterFromAlhabet: string) {
     this.letterPosition.forEach((div: ElementRef) => {
       if (getLetterFromAlhabet === div.nativeElement.innerText) {
-        //div.nativeElement.scrollTop = div.nativeElement.getBoundingClientRect().top;
-        console.log(div.nativeElement.scrollTop);
+        console.log(div.nativeElement.getBoundingClientRect().top);
       }
     });
   }
