@@ -1,0 +1,26 @@
+@mixin setting-for-border {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+@mixin border-for-part {
+  border: 1px solid darkgray;
+}
+@mixin margin-for-element {
+  margin-left: 2rem;
+}
+
+.find-words {
+  @include setting-for-border;
+  @include border-for-part;
+  background: whitesmoke;
+  input{
+    @include margin-for-element;
+    @include border-for-part;
+    width: 19rem;
+    height: 1.5rem;
+    border-radius: 4px;
+  }
+}

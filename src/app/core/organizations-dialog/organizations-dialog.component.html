@@ -1,8 +1,10 @@
 <div mat-dialog-content>
   <header><h4>Organizations</h4></header>
-  <div [className]="'find-words'">
-      <input matInput placeholder="Placeholder" [(ngModel)]="wordsToFind" (input)="findWords()">
-  </div>
+  <app-search-bar [alphabet]="alphabet" [nameList]="nameList" (divideCollumnForOrganizationsDialog)="this.displayObjForListWithDivideElements($event)"
+                  (alphabetForCollumnForOrganizationsDialog)="this.displayalphabetForCollumn($event)"></app-search-bar>
+<!--  <div [className]="'find-words'">-->
+<!--      <input matInput placeholder="Placeholder" [(ngModel)]="wordsToFind" (input)="findWords()">-->
+<!--  </div>-->
   <div [className]="'alphabet'">
     <div [className]="'border-inside-for-alphabet'">
         <p *ngFor="let item of alphabet" [class.hidden-letter]="!objForListWithDivideElements[item]" [class.bold-letter]="getLetter === item" (click)="goToLetter(item)">

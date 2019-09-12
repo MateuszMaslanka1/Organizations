@@ -10,13 +10,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { OrganizationsDialogComponent } from './core/organizations-dialog/organizations-dialog.component';
 import {MatDialogModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import { AlphabetBarComponent } from './core/alphabet-bar/alphabet-bar.component';
+import { SearchBarComponent } from './core/search-bar/search-bar.component';
+import {OrganizationDialogModule} from './core/organizations-dialog/organization-dialog.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainContentComponent,
-    OrganizationsDialogComponent
+    AlphabetBarComponent,
   ],
   imports: [
     MatFormFieldModule,
@@ -29,12 +32,12 @@ import {FormsModule} from '@angular/forms';
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
+    OrganizationDialogModule,
   ],
   exports: [MatButtonModule, MatCheckboxModule],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    OrganizationsDialogComponent
   ]
 })
 export class AppModule { }
