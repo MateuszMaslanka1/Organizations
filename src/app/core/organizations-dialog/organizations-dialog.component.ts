@@ -37,6 +37,7 @@ export class OrganizationsDialogComponent implements OnInit {
   getLetter = 'A';
   @ViewChildren('letterPosition') letterPosition: QueryList<ElementRef>;
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
+  @ViewChild('goToPositionLetter', {static: null}) goToPositionLetter: ElementRef;
 
   ngOnInit() {
     this.sortName();
@@ -104,6 +105,8 @@ export class OrganizationsDialogComponent implements OnInit {
        this.objForChangeColorLine[index] = {line: this.line};
      });
 
+     console.log(this.goToPositionLetter.nativeElement.scrollTop);
+
      Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
        if (Math.ceil(this.objForChangeColorLetter[el].letter) < 160 && Math.ceil(this.objForChangeColorLine[index].line) > 160) {
           this.getLetter = el;
@@ -117,7 +120,8 @@ export class OrganizationsDialogComponent implements OnInit {
   goToLetter(getLetterFromAlhabet: string) {
     this.letterPosition.forEach((div: ElementRef) => {
       if (getLetterFromAlhabet === div.nativeElement.innerText) {
-        console.log(div.nativeElement.getBoundingClientRect().top);
+        console.log(div.nativeElement, div.nativeElement.getBoundingClientRect().top);
+        div.nativeElement.scrollIntoView();
       }
     });
   }
