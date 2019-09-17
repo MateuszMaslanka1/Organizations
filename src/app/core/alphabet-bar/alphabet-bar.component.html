@@ -1,1 +1,7 @@
-<p>alphabet-bar works!</p>
+<div [className]="'alphabet'">
+  <div [className]="'border-inside-for-alphabet'">
+    <p *ngFor="let item of alphabet" [class.hidden-letter]="!objForListWithDivideElements[item]"
+       [class.bold-letter]="getLetter === item" (click)="goToLetter(item)">
+      {{item}}</p>
+  </div>
+</div>

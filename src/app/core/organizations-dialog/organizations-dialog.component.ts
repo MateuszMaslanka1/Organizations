@@ -24,13 +24,8 @@ export class OrganizationsDialogComponent implements OnInit {
     'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm',
     'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins', 'walm', 'wond', 'wins'];
   listWithAlphabeticGroupName = {};
-  listForFirstCollumn = [];
-  listForSecondCollumn = [];
-  listForThirdCollumn = [];
-  listForFourthCollumn = [];
   objForListWithDivideElements = {};
   alphabetForCollumn = [];
-  // wordsToFind: string;
   objForChangeColorLetter = {};
   objForChangeColorLine = {};
   line: string;
@@ -44,7 +39,6 @@ export class OrganizationsDialogComponent implements OnInit {
     this.sortName();
     this.groupAlphabeticlly();
     this.objForListWithDivideElements = this.divideInCollumnServices.divideInCollumn(this.listWithAlphabeticGroupName);
-    // this.divideInCollumn();
   }
 
   sortName() {
@@ -66,45 +60,6 @@ export class OrganizationsDialogComponent implements OnInit {
     this.alphabetForCollumn = alphabetForCollumn;
   }
 
-  // divideInCollumn() {
-  //   Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
-  //     const quantityOfElementInColumn = this.checkElementsService.lenghtOfColumn(this.listWithAlphabeticGroupName[el].listWithName);
-  //     this.listWithAlphabeticGroupName[el].listWithName.forEach(el2 => {
-  //       if (this.listForFirstCollumn.length < quantityOfElementInColumn) {
-  //         this.listForFirstCollumn.push(el2);
-  //       } else if (this.listForSecondCollumn.length < quantityOfElementInColumn) {
-  //         this.listForSecondCollumn.push(el2);
-  //       } else if (this.listForThirdCollumn.length < quantityOfElementInColumn) {
-  //         this.listForThirdCollumn.push(el2);
-  //       } else if (this.listForFourthCollumn.length < quantityOfElementInColumn) {
-  //         this.listForFourthCollumn.push(el2);
-  //       }
-  //     });
-  //     this.objForListWithDivideElements[el] = {
-  //       divideElementListOne: this.listForFirstCollumn,
-  //       divideElementListTwo: this.listForSecondCollumn,
-  //       divideElementListThree: this.listForThirdCollumn,
-  //       divideElementListFour: this.listForFourthCollumn,
-  //     };
-  //     this.listForFirstCollumn = [];
-  //     this.listForSecondCollumn = [];
-  //     this.listForThirdCollumn = [];
-  //     this.listForFourthCollumn = [];
-  //   });
-  // }
-
-  // findWords() {
-  //   this.objForListWithDivideElements = {};
-  //   this.alphabetForCollumn = [];
-  //   const listWithFindWords = this.checkElementsService.findWords(this.wordsToFind, this.nameList);
-  //   this.checkElementsService.sortElement(listWithFindWords);
-  //   this.listWithAlphabeticGroupName = this.checkElementsService.groupAlphabetically(this.alphabet, listWithFindWords);
-  //   Object.keys(this.listWithAlphabeticGroupName).forEach(el => {
-  //     this.alphabetForCollumn.push(el);
-  //   });
-  //   this.divideInCollumn();
-  // }
-
   FindLetterToChange() {
      this.letterPosition.forEach((div: ElementRef) => {
        this.letter = div.nativeElement.getBoundingClientRect().top;
@@ -115,7 +70,7 @@ export class OrganizationsDialogComponent implements OnInit {
        this.objForChangeColorLine[index] = {line: this.line};
      });
 
-     console.log(this.goToPositionLetter.nativeElement.scrollTop);
+     // console.log(this.goToPositionLetter.nativeElement.scrollTop);
 
      Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
        if (Math.ceil(this.objForChangeColorLetter[el].letter) < 160 && Math.ceil(this.objForChangeColorLine[index].line) > 160) {

@@ -1,17 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MainContentComponent } from './core/main-content/main-content.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {MainContentComponent} from './core/main-content/main-content.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { OrganizationsDialogComponent } from './core/organizations-dialog/organizations-dialog.component';
 import {MatDialogModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import { AlphabetBarComponent } from './core/alphabet-bar/alphabet-bar.component';
-import { SearchBarComponent } from './core/search-bar/search-bar.component';
+// import {AlphabetBarComponent} from './core/alphabet-bar/alphabet-bar.component';
 import {OrganizationDialogModule} from './core/organizations-dialog/organization-dialog.module';
 
 
@@ -19,7 +17,7 @@ import {OrganizationDialogModule} from './core/organizations-dialog/organization
   declarations: [
     AppComponent,
     MainContentComponent,
-    AlphabetBarComponent,
+    // AlphabetBarComponent,
   ],
   imports: [
     MatFormFieldModule,
