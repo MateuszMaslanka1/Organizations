@@ -1,0 +1,24 @@
+<div [className]="'data'">
+    <ng-container *ngIf="objForListWithDivideElements[item]">
+      <div [className]="'divide-data'">
+        <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne">
+          {{item}}
+        </div>
+      </div>
+      <div [className]="'divide-data'">
+        <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListTwo">
+          {{item}}
+        </div>
+      </div>
+      <div [className]="'divide-data'">
+        <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListThree">
+          {{item}}
+        </div>
+      </div>
+      <div [className]="'divide-data'">
+        <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListFour">
+          {{item}}
+        </div>
+      </div>
+    </ng-container>
+</div>

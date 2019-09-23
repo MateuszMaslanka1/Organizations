@@ -61,18 +61,17 @@ export class OrganizationsDialogComponent implements OnInit {
   }
 
   FindLetterToChange() {
-     this.letterPosition.forEach((div: ElementRef) => {
+    this.letterPosition.forEach((div: ElementRef) => {
        this.letter = div.nativeElement.getBoundingClientRect().top;
        this.objForChangeColorLetter[div.nativeElement.innerText] = {letter: this.letter};
      });
-     this.linePosition.forEach((div: ElementRef, index) => {
+
+    this.linePosition.forEach((div: ElementRef, index) => {
        this.line = div.nativeElement.getBoundingClientRect().top;
        this.objForChangeColorLine[index] = {line: this.line};
      });
 
-     // console.log(this.goToPositionLetter.nativeElement.scrollTop);
-
-     Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
+    Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
        if (Math.ceil(this.objForChangeColorLetter[el].letter) < 160 && Math.ceil(this.objForChangeColorLine[index].line) > 160) {
           this.getLetter = el;
        }
@@ -82,12 +81,7 @@ export class OrganizationsDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  goToLetter(getLetterFromAlhabet: string) {
-    this.letterPosition.forEach((div: ElementRef) => {
-      if (getLetterFromAlhabet === div.nativeElement.innerText) {
-        // console.log(div.nativeElement, div.nativeElement.getBoundingClientRect().top);
-        div.nativeElement.scrollIntoView();
-      }
-    });
+  goToLetter(getLetterToGo) {
+    this.getLetter = getLetterToGo;
   }
 }

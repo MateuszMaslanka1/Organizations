@@ -2,43 +2,15 @@
   <header><h4>Organizations</h4></header>
   <app-search-bar [alphabet]="alphabet" [nameList]="nameList" (divideCollumnForOrganizationsDialog)="this.displayObjForListWithDivideElements($event)"
                   (alphabetForCollumnForOrganizationsDialog)="this.displayalphabetForCollumn($event)"></app-search-bar>
-      <app-alphabet-bar [alphabet]="alphabet" [objForListWithDivideElements]="objForListWithDivideElements" [getLetter]="getLetter"></app-alphabet-bar>
-<!--  <div [className]="'alphabet'">-->
-<!--    <div [className]="'border-inside-for-alphabet'">-->
-<!--        <p *ngFor="let item of alphabet" [class.hidden-letter]="!objForListWithDivideElements[item]" [class.bold-letter]="getLetter === item" (click)="goToLetter(item)">-->
-<!--          {{item}}</p>-->
-<!--    </div>-->
-<!--  </div>-->
+      <app-alphabet-bar [alphabet]="alphabet" [objForListWithDivideElements]="objForListWithDivideElements" [getLetter]="getLetter"
+                        [letterPosition]="letterPosition" (sendLettertoOrganizationsDialog)="this.goToLetter($event)"></app-alphabet-bar>
   <div [className]="'border-for-all'" (scroll)="FindLetterToChange()" #goToPositionLetter>
     <section *ngFor="let item of alphabetForCollumn">
       <div [className]="'border-for-letters'">
         <div [className]="'letters'" #letterPosition>{{item}}</div>
       </div>
       <div [className]="'border-for-data'">
-        <div [className]="'data'">
-          <ng-container *ngIf="objForListWithDivideElements[item]">
-            <div [className]="'divide-data'">
-              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne">
-                {{item}}
-              </div>
-            </div>
-            <div [className]="'divide-data'">
-              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListTwo">
-                {{item}}
-              </div>
-            </div>
-            <div [className]="'divide-data'">
-              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListThree">
-                {{item}}
-              </div>
-            </div>
-            <div [className]="'divide-data'">
-              <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListFour">
-              {{item}}
-              </div>
-            </div>
-          </ng-container>
-        </div>
+        <app-border-for-all [objForListWithDivideElements]="objForListWithDivideElements" [item]="item"></app-border-for-all>
         <hr #linePosition>
       </div>
     </section>

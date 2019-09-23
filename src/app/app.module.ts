@@ -9,7 +9,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
-// import {AlphabetBarComponent} from './core/alphabet-bar/alphabet-bar.component';
 import {OrganizationDialogModule} from './core/organizations-dialog/organization-dialog.module';
 
 
@@ -17,7 +16,6 @@ import {OrganizationDialogModule} from './core/organizations-dialog/organization
   declarations: [
     AppComponent,
     MainContentComponent,
-    // AlphabetBarComponent,
   ],
   imports: [
     MatFormFieldModule,
