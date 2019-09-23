@@ -3,7 +3,7 @@
   <app-search-bar [alphabet]="alphabet" [nameList]="nameList" (divideCollumnForOrganizationsDialog)="this.displayObjForListWithDivideElements($event)"
                   (alphabetForCollumnForOrganizationsDialog)="this.displayalphabetForCollumn($event)"></app-search-bar>
       <app-alphabet-bar [alphabet]="alphabet" [objForListWithDivideElements]="objForListWithDivideElements" [getLetter]="getLetter"
-                        [letterPosition]="letterPosition" (sendLettertoOrganizationsDialog)="this.goToLetter($event)"></app-alphabet-bar>
+                        (sendLettertoOrganizationsDialog)="this.goToLetter($event)"></app-alphabet-bar>
   <div [className]="'border-for-all'" (scroll)="FindLetterToChange()" #goToPositionLetter>
     <section *ngFor="let item of alphabetForCollumn">
       <div [className]="'border-for-letters'">

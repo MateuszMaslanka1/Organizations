@@ -2,6 +2,7 @@ import {Component, ElementRef, EventEmitter, Inject, OnInit, Output, QueryList, 
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {CheckElementsService} from './check-elements.service';
 import {DivideInCollumnService} from '../divide-in-collumn.service';
+import {GetLetterPositionService} from '../get-letter-position.service';
 
 @Component({
   selector: 'app-organizations-dialog',
@@ -11,7 +12,8 @@ import {DivideInCollumnService} from '../divide-in-collumn.service';
 export class OrganizationsDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<OrganizationsDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-              private checkElementsService: CheckElementsService, private divideInCollumnServices: DivideInCollumnService) { }
+              private getLetterPositionService: GetLetterPositionService, private checkElementsService: CheckElementsService,
+              private divideInCollumnServices: DivideInCollumnService) { }
 
   alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
   nameList = ['asd', 'palm', 'part', 'pond', 'prevalent', 'paris', 'pins', 'pretense', 'o', 'op', 'r', 'cvb', 'fgh', 'ghj', 'jkl', 'n',
@@ -39,6 +41,11 @@ export class OrganizationsDialogComponent implements OnInit {
     this.sortName();
     this.groupAlphabeticlly();
     this.objForListWithDivideElements = this.divideInCollumnServices.divideInCollumn(this.listWithAlphabeticGroupName);
+  }
+
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngAfterViewInit() {
+    this.getLetterPositionService.getLetter(this.letterPosition);
   }
 
   sortName() {

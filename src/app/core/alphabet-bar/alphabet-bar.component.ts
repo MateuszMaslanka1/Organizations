@@ -1,4 +1,5 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList} from '@angular/core';
+import {GetLetterPositionService} from '../get-letter-position.service';
 
 @Component({
   selector: 'app-alphabet-bar',
@@ -7,7 +8,7 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList} f
 })
 export class AlphabetBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getLetterPositionService: GetLetterPositionService) { }
 
   @Input() alphabet: string[];
   @Input() objForListWithDivideElements = {};
@@ -16,11 +17,10 @@ export class AlphabetBarComponent implements OnInit {
   @Output() sendLettertoOrganizationsDialog = new EventEmitter();
 
   ngOnInit() {
-
   }
 
   goToLetter(getLetterFromAlhabet: string) {
-    this.letterPosition.forEach((div: ElementRef) => {
+    this.getLetterPositionService.sendLetter().forEach((div: ElementRef) => {
       if (getLetterFromAlhabet === div.nativeElement.innerText) {
         this.sendLettertoOrganizationsDialog.emit(div.nativeElement.innerText);
         div.nativeElement.scrollIntoView();
