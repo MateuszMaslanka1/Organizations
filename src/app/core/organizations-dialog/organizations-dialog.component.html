@@ -5,7 +5,7 @@
       <app-alphabet-bar [alphabet]="alphabet" [objForListWithDivideElements]="objForListWithDivideElements" [getLetter]="getLetter"
                         (sendLettertoOrganizationsDialog)="this.goToLetter($event)"></app-alphabet-bar>
   <div [className]="'border-for-all'" (scroll)="FindLetterToChange()" #goToPositionLetter>
-    <section *ngFor="let item of alphabetForCollumn">
+    <section *ngFor="let item of alphabetForCollumn; let i = index" [class.add-padding]="i === alphabetForCollumn.length - 1" #getSection>
       <div [className]="'border-for-letters'">
         <div [className]="'letters'" #letterPosition>{{item}}</div>
       </div>

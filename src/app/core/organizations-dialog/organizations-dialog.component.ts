@@ -1,8 +1,9 @@
-import {Component, ElementRef, EventEmitter, Inject, OnInit, Output, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {CheckElementsService} from './check-elements.service';
 import {DivideInCollumnService} from '../divide-in-collumn.service';
 import {GetLetterPositionService} from '../get-letter-position.service';
+
 
 @Component({
   selector: 'app-organizations-dialog',
@@ -36,6 +37,7 @@ export class OrganizationsDialogComponent implements OnInit {
   @ViewChildren('letterPosition') letterPosition: QueryList<ElementRef>;
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
   @ViewChild('goToPositionLetter', {static: null}) goToPositionLetter: ElementRef;
+  @ViewChildren('getSection') getSection: QueryList<ElementRef>;
 
   ngOnInit() {
     this.sortName();
@@ -45,6 +47,7 @@ export class OrganizationsDialogComponent implements OnInit {
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngAfterViewInit() {
+    this.getHeight();
     this.getLetterPositionService.getLetter(this.letterPosition);
   }
 
@@ -74,8 +77,8 @@ export class OrganizationsDialogComponent implements OnInit {
      });
 
     this.linePosition.forEach((div: ElementRef, index) => {
-       this.line = div.nativeElement.getBoundingClientRect().top;
-       this.objForChangeColorLine[index] = {line: this.line};
+      this.line = div.nativeElement.getBoundingClientRect().top;
+      this.objForChangeColorLine[index] = {line: this.line};
      });
 
     Object.keys(this.objForChangeColorLetter).forEach((el, index) => {
@@ -90,5 +93,10 @@ export class OrganizationsDialogComponent implements OnInit {
 
   goToLetter(getLetterToGo) {
     this.getLetter = getLetterToGo;
+  }
+
+  getHeight() {
+    console.log(this.getSection.toArray()[this.getSection.length - 1].nativeElement.offsetHeight);
+    console.log(this.goToPositionLetter.nativeElement.offsetHeight);
   }
 }
