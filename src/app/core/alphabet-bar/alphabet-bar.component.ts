@@ -21,9 +21,9 @@ export class AlphabetBarComponent implements OnInit {
 
   goToLetter(getLetterFromAlhabet: string) {
     this.getLetterPositionService.sendLetter().forEach((div: ElementRef) => {
-      if (getLetterFromAlhabet === div.nativeElement.innerText) {
+      if (getLetterFromAlhabet === div.nativeElement.children[0].innerText) {
         this.sendLettertoOrganizationsDialog.emit(div.nativeElement.innerText);
-        div.nativeElement.scrollIntoView();
+        console.log(div.nativeElement.offsetTop);
       }
     });
   }

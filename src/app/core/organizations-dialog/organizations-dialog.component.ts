@@ -48,7 +48,7 @@ export class OrganizationsDialogComponent implements OnInit {
   // tslint:disable-next-line:use-lifecycle-interface
   ngAfterViewInit() {
     this.getHeight();
-    this.getLetterPositionService.getLetter(this.letterPosition);
+    this.getLetterPositionService.getLetter(this.getSection);
   }
 
   sortName() {
