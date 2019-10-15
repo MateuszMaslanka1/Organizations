@@ -92,7 +92,8 @@ export class OrganizationsDialogComponent implements OnInit {
   }
 
   goToLetter(getLetterToGo) {
-    this.getLetter = getLetterToGo;
+    this.goToPositionLetter.nativeElement.scrollTop  = getLetterToGo.position - 150;
+    this.getLetter = getLetterToGo.letter;
   }
 
   getHeight() {

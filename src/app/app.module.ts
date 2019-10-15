@@ -7,7 +7,9 @@ import {MainContentComponent} from './core/main-content/main-content.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatDialogModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {OrganizationDialogModule} from './core/organizations-dialog/organization-dialog.module';
 
