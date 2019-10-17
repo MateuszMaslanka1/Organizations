@@ -12,4 +12,12 @@ export class ButtonForItemsComponent implements OnInit {
   ngOnInit() {
   }
 
+  addItem() {
+    // console.log('jestem');
+
+  }
+
+  removeItem() {
+    console.log('jestem');
+  }
 }
