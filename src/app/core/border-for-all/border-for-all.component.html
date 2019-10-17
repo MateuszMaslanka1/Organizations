@@ -3,21 +3,37 @@
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne">
           <mat-checkbox>{{item}}</mat-checkbox>
+          <div [className]="'border-for-button'">
+            <div [className]="'button-for-data'"><i class="material-icons">add_circle</i></div>
+            <div [className]="'button-for-data'"><i class="material-icons">remove_circle</i></div>
+          </div>
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListTwo">
           <mat-checkbox>{{item}}</mat-checkbox>
+          <div [className]="'border-for-button'">
+            <div [className]="'button-for-data'"><i class="material-icons">add_circle</i></div>
+            <div [className]="'button-for-data'"><i class="material-icons">remove_circle</i></div>
+          </div>
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListThree">
           <mat-checkbox>{{item}}</mat-checkbox>
+          <div [className]="'border-for-button'">
+            <div [className]="'button-for-data'"><i class="material-icons">add_circle</i></div>
+            <div [className]="'button-for-data'"><i class="material-icons">remove_circle</i></div>
+          </div>
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListFour">
           <mat-checkbox>{{item}}</mat-checkbox>
+          <div [className]="'border-for-button'">
+            <div [className]="'button-for-data'"><i class="material-icons">add_circle</i></div>
+            <div [className]="'button-for-data'"><i class="material-icons">remove_circle</i></div>
+          </div>
         </div>
       </div>
     </ng-container>
