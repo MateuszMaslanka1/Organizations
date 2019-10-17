@@ -2,22 +2,22 @@
     <ng-container *ngIf="objForListWithDivideElements[item]">
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne">
-          {{item}}
+          <mat-checkbox>{{item}}</mat-checkbox>
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListTwo">
-          {{item}}
+          <mat-checkbox>{{item}}</mat-checkbox>
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListThree">
-          {{item}}
+          <mat-checkbox>{{item}}</mat-checkbox>
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListFour">
-          {{item}}
+          <mat-checkbox>{{item}}</mat-checkbox>
         </div>
       </div>
     </ng-container>
