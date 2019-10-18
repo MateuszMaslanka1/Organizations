@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-button-for-items',
@@ -9,15 +9,18 @@ export class ButtonForItemsComponent implements OnInit {
 
   constructor() { }
 
+  @Input() indexOfItem: number;
+  @Input() nameOfItem: number;
+
   ngOnInit() {
   }
 
   addItem() {
-    // console.log('jestem');
-
+    console.log(this.indexOfItem);
+    console.log(this.nameOfItem);
   }
 
   removeItem() {
-    console.log('jestem');
+
   }
 }

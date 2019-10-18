@@ -12,6 +12,7 @@ export class BorderForAllComponent implements OnInit {
   @Input() objForListWithDivideElements = {};
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
   @Input() item: any;
+  checked = false;
 
   ngOnInit() {
   }
