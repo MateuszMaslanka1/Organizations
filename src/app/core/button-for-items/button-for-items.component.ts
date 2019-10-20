@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 
 @Component({
   selector: 'app-button-for-items',
@@ -11,17 +11,18 @@ export class ButtonForItemsComponent implements OnInit {
 
   @Input() indexOfItem: number;
   @Input() nameOfItem: number;
+  // @ViewChildren('getCheckBox') getCheckBox: QueryList<ElementRef>;
 
   ngOnInit() {
   }
 
   addItem() {
  // *ngIf="i === 0 && item === 'asd' else elseBlock" checked="true"
-    console.log(this.indexOfItem);
-    console.log(this.nameOfItem);
+
+    // console.log(this.indexOfItem);
+    // console.log(this.nameOfItem);
   }
 
   removeItem() {
-
   }
 }
