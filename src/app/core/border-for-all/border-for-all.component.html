@@ -2,7 +2,7 @@
     <ng-container *ngIf="objForListWithDivideElements[item]">
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne; let i = index">
-          <mat-checkbox *ngIf="i === 0 && item === 'asd' else elseBlock" checked="true">{{item}}</mat-checkbox>
+          <mat-checkbox #getCheckBox>{{item}}</mat-checkbox>
           <ng-template #elseBlock>
             <mat-checkbox>{{item}}</mat-checkbox>
           </ng-template>

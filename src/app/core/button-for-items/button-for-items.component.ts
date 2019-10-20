@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-button-for-items',
@@ -16,6 +16,7 @@ export class ButtonForItemsComponent implements OnInit {
   }
 
   addItem() {
+ // *ngIf="i === 0 && item === 'asd' else elseBlock" checked="true"
     console.log(this.indexOfItem);
     console.log(this.nameOfItem);
   }

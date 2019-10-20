@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 
 @Component({
   selector: 'app-border-for-all',
@@ -12,8 +12,13 @@ export class BorderForAllComponent implements OnInit {
   @Input() objForListWithDivideElements = {};
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
   @Input() item: any;
+  @ViewChild('getCheckBox', {static: null}) getCheckBox: ElementRef;
   checked = false;
 
   ngOnInit() {
+  }
+
+  addItem(){
+    console.log(this.getCheckBox.nativeElement);
   }
 }
