@@ -18,10 +18,11 @@ export class BorderForAllComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem(){
-    //console.log(event.checked);
-    this.getCheckBox.forEach((el) => {
-      console.log(el);
+  addItem(indexButton){
+    this.getCheckBox.forEach((el: ElementRef, index) => {
+      if (index === indexButton) {
+        el.checked = true;
+      }
     });
   }
 }
