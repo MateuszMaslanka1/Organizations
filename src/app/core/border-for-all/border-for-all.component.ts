@@ -13,7 +13,7 @@ export class BorderForAllComponent implements OnInit {
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
   @Input() item: any;
   @ViewChildren('getCheckBox') getCheckBox: QueryList<ElementRef>;
- // checked = false;
+  isChecked = false;
 
   ngOnInit() {
   }
