@@ -12,14 +12,15 @@ export class BorderForAllComponent implements OnInit {
   @Input() objForListWithDivideElements = {};
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
   @Input() item: any;
-  @ViewChildren('getCheckBox') getCheckBox: QueryList<ElementRef>;
+  @ViewChildren('getCheckBox') getCheckBox: QueryList<any>;
   isChecked = false;
+  indexOfElement: number;
 
   ngOnInit() {
   }
 
-  addItem(indexButton){
-    this.getCheckBox.forEach((el: ElementRef, index) => {
+  addItem(indexButton) {
+    this.getCheckBox.forEach((el, index) => {
       if (index === indexButton) {
         el.checked = true;
       }

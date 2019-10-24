@@ -3,9 +3,9 @@
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne; let i = index">
           <mat-checkbox [checked]="isChecked" #getCheckBox>{{item}}</mat-checkbox>
-          <ng-template #elseBlock>
-            <mat-checkbox>{{item}}</mat-checkbox>
-          </ng-template>
+<!--          <ng-template #elseBlock>-->
+<!--            <mat-checkbox>{{item}}</mat-checkbox>-->
+<!--          </ng-template>-->
 <!--          <app-button-for-items [nameOfItem]="item" [indexOfItem]="i"></app-button-for-items>-->
           <div [className]="'border-for-button'">
             <div [className]="'button-for-data'" (click)="addItem(i)"><i class="material-icons">add_circle</i></div>
