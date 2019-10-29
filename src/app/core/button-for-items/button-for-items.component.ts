@@ -11,18 +11,20 @@ export class ButtonForItemsComponent implements OnInit {
 
   @Input() indexOfItem: number;
   @Input() nameOfItem: number;
+  @ViewChildren('getCheckBox') getCheckBox: QueryList<any>;
   // @ViewChildren('getCheckBox') getCheckBox: QueryList<ElementRef>;
 
   ngOnInit() {
   }
 
   addItem() {
- // *ngIf="i === 0 && item === 'asd' else elseBlock" checked="true"
-
-    // console.log(this.indexOfItem);
-    // console.log(this.nameOfItem);
+    this.getCheckBox.forEach((el, index) => {
+      console.log(el._elementRef.nativeElement, index);
+      if (index === this.indexOfItem) {
+        el.checked = true;
+      }
+    });
   }
-
   removeItem() {
   }
 }

@@ -2,33 +2,30 @@
     <ng-container *ngIf="objForListWithDivideElements[item]">
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne; let i = index">
-          <mat-checkbox [checked]="isChecked" #getCheckBox>{{item}}</mat-checkbox>
-<!--          <ng-template #elseBlock>-->
-<!--            <mat-checkbox>{{item}}</mat-checkbox>-->
-<!--          </ng-template>-->
-<!--          <app-button-for-items [nameOfItem]="item" [indexOfItem]="i"></app-button-for-items>-->
+          <mat-checkbox #getCheckBox></mat-checkbox>
+          <p>{{item}}</p>
           <div [className]="'border-for-button'">
             <div [className]="'button-for-data'" (click)="addItem(i)"><i class="material-icons">add_circle</i></div>
-<!--            <div [className]="'button-for-data'" (click)="removeItem()"><i class="material-icons">remove_circle</i></div>-->
+            <div [className]="'button-for-data'" (click)="removeItem(i)"><i class="material-icons">remove_circle</i></div>
           </div>
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListTwo">
           <mat-checkbox>{{item}}</mat-checkbox>
-          <app-button-for-items></app-button-for-items>
+<!--          <app-button-for-items></app-button-for-items>-->
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListThree">
           <mat-checkbox>{{item}}</mat-checkbox>
-          <app-button-for-items></app-button-for-items>
+<!--          <app-button-for-items></app-button-for-items>-->
         </div>
       </div>
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListFour">
           <mat-checkbox>{{item}}</mat-checkbox>
-          <app-button-for-items></app-button-for-items>
+<!--          <app-button-for-items></app-button-for-items>-->
         </div>
       </div>
     </ng-container>

@@ -1,13 +1,6 @@
 :host{
   width: 100%;
 }
-//.border-for-data {
-//  // border: 1px solid blue;
-//  padding-top: 0.6rem;
-//  width: 100%;
-//  hr {
-//    margin-top: 2rem;
-//  }
   .data {
     // border: 1px solid green;
     width: 100%;
@@ -23,6 +16,31 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .border-for-button{
+          display: flex;
+          .button-for-data {
+            border: 1px solid darkslategray;
+            width: 2rem;
+            height: 1rem;
+            margin-left: 0.5rem;
+            border-radius: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            i {
+              color: darkslategray;
+              font-size: 1rem;
+              cursor: pointer;
+            }
+          }
+          .button-for-data:nth-child(2) {
+            margin-right: 0.5rem;
+          }
+        }
+          p{
+             margin: 0;
+          }
       }
       .data-details:hover {
         background-color: lightgrey;
