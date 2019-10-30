@@ -2,8 +2,12 @@
     <ng-container *ngIf="objForListWithDivideElements[item]">
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne; let i = index">
-          <mat-checkbox #getCheckBox></mat-checkbox>
-          <p>{{item}}</p>
+          <div [className]="'border-for-checkbox-and-text'">
+            <div [className]="'border-for-checkbox'">
+              <mat-checkbox #getCheckBox (change)="unCheck($event)"></mat-checkbox>
+            </div>
+            <p>{{item}}</p>
+          </div>
           <div [className]="'border-for-button'">
             <div [className]="'button-for-data'" (click)="addItem(i)"><i class="material-icons">add_circle</i></div>
             <div [className]="'button-for-data'" (click)="removeItem(i)"><i class="material-icons">remove_circle</i></div>

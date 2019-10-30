@@ -28,8 +28,14 @@ export class BorderForAllComponent implements OnInit {
   removeItem(indexButton) {
     this.getCheckBox.forEach((el, index) => {
       if (index === indexButton) {
-        this.renderer.setProperty(el._elementRef.nativeElement, 'innerHTML', '<i class="material-icons"> cancel </i>');
+        const getParent = el._elementRef.nativeElement.parentNode;
+        el._elementRef.nativeElement.remove();
+        this.renderer.setProperty(getParent, 'innerHTML', '<i class="material-icons"> cancel </i>');
       }
     });
+  }
+
+  unCheck(event) {
+    console.log(event);
   }
 }

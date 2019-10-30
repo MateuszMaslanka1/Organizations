@@ -5,9 +5,9 @@
     // border: 1px solid green;
     width: 100%;
     display: flex;
-    align-items: center;
+    // align-items: center;
     .divide-data {
-      // border: 1px solid red;
+     //  border: 1px solid red;
       width: 100%;
       .data-details {
         // border: 1px solid red;
@@ -16,6 +16,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .border-for-checkbox-and-text {
+          display: flex;
+          p {
+              margin: 0;
+              padding-left: 0.5rem;
+          }
+        }
         .border-for-button{
           display: flex;
           .button-for-data {
@@ -38,9 +45,6 @@
             margin-right: 0.5rem;
           }
         }
-          p{
-             margin: 0;
-          }
       }
       .data-details:hover {
         background-color: lightgrey;
