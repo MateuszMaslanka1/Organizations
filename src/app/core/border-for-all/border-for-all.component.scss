@@ -16,6 +16,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .border-for-checkbox-and-text {
+          display: flex;
+          align-items: center;
+        }
         .border-for-button{
           display: flex;
           .button-for-data {
@@ -38,9 +42,9 @@
             margin-right: 0.5rem;
           }
         }
-          p{
-             margin: 0;
-          }
+        p{
+          margin: 0;
+        }
       }
       .data-details:hover {
         background-color: lightgrey;

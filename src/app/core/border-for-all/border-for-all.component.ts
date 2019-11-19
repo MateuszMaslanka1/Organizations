@@ -32,4 +32,8 @@ export class BorderForAllComponent implements OnInit {
       }
     });
   }
+
+  unCheck(e) {
+    console.log(e.currentTarget);
+  }
 }
