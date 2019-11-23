@@ -7,7 +7,7 @@ import {Component, ElementRef, Input, OnInit, QueryList, Renderer2, ViewChildren
 })
 export class BorderForAllComponent implements OnInit {
 
-  constructor(private renderer: Renderer2) { }
+  constructor() { }
 
   @Input() objForListWithDivideElements = {};
   @ViewChildren('linePosition') linePosition: QueryList<ElementRef>;
@@ -34,8 +34,7 @@ export class BorderForAllComponent implements OnInit {
   }
 
   unCheck(e) {
-    if (e.currentTarget.textContent === 'check_box_outline_blank')
-    {
+    if (e.currentTarget.textContent === 'check_box_outline_blank') {
       e.currentTarget.textContent = 'check_box';
     } else {
       e.currentTarget.textContent = 'check_box_outline_blank';
