@@ -20,7 +20,7 @@ export class BorderForAllComponent implements OnInit {
   addItem(indexButton) {
     this.getCheckBox.forEach((el, index) => {
       if (index === indexButton) {
-        el.checked = true;
+        el.nativeElement.textContent = 'check_box';
       }
     });
   }
@@ -28,12 +28,17 @@ export class BorderForAllComponent implements OnInit {
   removeItem(indexButton) {
     this.getCheckBox.forEach((el, index) => {
       if (index === indexButton) {
-        this.renderer.setProperty(el._elementRef.nativeElement, 'innerHTML', '<i class="material-icons"> cancel </i>');
+        el.nativeElement.textContent = 'cancel';
       }
     });
   }
 
   unCheck(e) {
-    console.log(e.currentTarget);
+    if (e.currentTarget.textContent === 'check_box_outline_blank')
+    {
+      e.currentTarget.textContent = 'check_box';
+    } else {
+      e.currentTarget.textContent = 'check_box_outline_blank';
+    }
   }
 }

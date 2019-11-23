@@ -3,7 +3,7 @@
       <div [className]="'divide-data'">
         <div [className]="'data-details'" *ngFor="let item of objForListWithDivideElements[item].divideElementListOne; let i = index">
           <div [className]="'border-for-checkbox-and-text'">
-            <mat-checkbox #getCheckBox (click)="unCheck($event)"></mat-checkbox>
+            <i class="material-icons" #getCheckBox (click)="unCheck($event)">check_box_outline_blank</i>
             <p>{{item}}</p>
           </div>
           <div [className]="'border-for-button'">
