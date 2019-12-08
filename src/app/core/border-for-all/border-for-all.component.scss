@@ -19,13 +19,16 @@
         .border-for-checkbox-and-text {
           display: flex;
           align-items: center;
+          .material-icons {
+            cursor: pointer;
+          }
           p {
               margin: 0;
               padding-left: 0.5rem;
           }
         }
         .border-for-button{
-          display: flex;
+          display: none;
           .button-for-data {
             border: 1px solid darkslategray;
             width: 2rem;
@@ -53,6 +56,9 @@
       .data-details:hover {
         background-color: lightgrey;
         opacity: 0.9;
+        .border-for-button{
+          display: flex;
+        }
       }
     }
   }
