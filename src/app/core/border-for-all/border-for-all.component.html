@@ -10,7 +10,9 @@
 <!--            <div [className]="'button-for-data'" (click)="addItem(i)"><i class="material-icons">add_circle</i></div>-->
 <!--            <div [className]="'button-for-data'" (click)="removeItem(i)"><i class="material-icons">remove_circle</i></div>-->
 <!--          </div>-->
-          <app-button-for-items [indexOfItem]="i"></app-button-for-items>
+          <div [className]="'border-for-button'">
+            <app-button-for-items [indexOfItem]="i" [getCheckBox]="getCheckBox"></app-button-for-items>
+          </div>
         </div>
       </div>
       <div [className]="'divide-data'">
