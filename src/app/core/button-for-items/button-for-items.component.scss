@@ -1,5 +1,5 @@
 .border-for-button{
-  display: flex;
+  display: none;
   .button-for-data {
     border: 1px solid darkslategray;
     width: 2rem;
@@ -18,5 +18,12 @@
   }
   .button-for-data:nth-child(2) {
     margin-right: 0.5rem;
+  }
+}
+.data-details:hover {
+  background-color: lightgrey;
+  opacity: 0.9;
+  .border-for-button{
+    display: flex;
   }
 }

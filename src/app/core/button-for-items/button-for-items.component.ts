@@ -12,19 +12,23 @@ export class ButtonForItemsComponent implements OnInit {
   @Input() indexOfItem: number;
   @Input() nameOfItem: number;
   @ViewChildren('getCheckBox') getCheckBox: QueryList<any>;
-  // @ViewChildren('getCheckBox') getCheckBox: QueryList<ElementRef>;
 
   ngOnInit() {
   }
 
-  addItem() {
+  addItem(indexButton) {
     this.getCheckBox.forEach((el, index) => {
-      console.log(el._elementRef.nativeElement, index);
-      if (index === this.indexOfItem) {
-        el.checked = true;
+      if (index === indexButton) {
+        el.nativeElement.textContent = 'check_box';
       }
     });
   }
-  removeItem() {
+
+  removeItem(indexButton) {
+    this.getCheckBox.forEach((el, index) => {
+      if (index === indexButton) {
+        el.nativeElement.textContent = 'cancel';
+      }
+    });
   }
 }

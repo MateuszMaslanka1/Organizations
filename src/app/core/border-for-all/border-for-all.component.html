@@ -6,10 +6,11 @@
             <i class="material-icons" #getCheckBox (click)="unCheck($event)">check_box_outline_blank</i>
             <p>{{item}}</p>
           </div>
-          <div [className]="'border-for-button'">
-            <div [className]="'button-for-data'" (click)="addItem(i)"><i class="material-icons">add_circle</i></div>
-            <div [className]="'button-for-data'" (click)="removeItem(i)"><i class="material-icons">remove_circle</i></div>
-          </div>
+<!--          <div [className]="'border-for-button'">-->
+<!--            <div [className]="'button-for-data'" (click)="addItem(i)"><i class="material-icons">add_circle</i></div>-->
+<!--            <div [className]="'button-for-data'" (click)="removeItem(i)"><i class="material-icons">remove_circle</i></div>-->
+<!--          </div>-->
+          <app-button-for-items [indexOfItem]="i"></app-button-for-items>
         </div>
       </div>
       <div [className]="'divide-data'">
