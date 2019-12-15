@@ -17,21 +17,21 @@ export class BorderForAllComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem(indexButton) {
-    this.getCheckBox.forEach((el, index) => {
-      if (index === indexButton) {
-        el.nativeElement.textContent = 'check_box';
-      }
-    });
-  }
-
-  removeItem(indexButton) {
-    this.getCheckBox.forEach((el, index) => {
-      if (index === indexButton) {
-        el.nativeElement.textContent = 'cancel';
-      }
-    });
-  }
+  // addItem(indexButton) {
+  //   this.getCheckBox.forEach((el, index) => {
+  //     if (index === indexButton) {
+  //       el.nativeElement.textContent = 'check_box';
+  //     }
+  //   });
+  // }
+  //
+  // removeItem(indexButton) {
+  //   this.getCheckBox.forEach((el, index) => {
+  //     if (index === indexButton) {
+  //       el.nativeElement.textContent = 'cancel';
+  //     }
+  //   });
+  // }
 
   unCheck(e) {
     if (e.currentTarget.textContent === 'check_box_outline_blank') {

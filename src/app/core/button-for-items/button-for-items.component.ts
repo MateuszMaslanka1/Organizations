@@ -11,7 +11,6 @@ export class ButtonForItemsComponent implements OnInit {
 
   @Input() indexOfItem: number;
   @Input() getCheckBox: any;
-  // @ViewChildren('getCheckBox') getCheckBox: QueryList<any>;
 
   ngOnInit() {
   }
