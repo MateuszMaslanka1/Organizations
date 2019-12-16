@@ -127,14 +127,14 @@
 
 .container3 {
   background: black;
-  width: 1120px;
+  width: 1200px;
   height: 410px;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   margin: 5rem;
   display: grid;
-  grid-template-columns: 460px 240px auto;
-  grid-template-rows: 250px 150px;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  grid-template-rows: 1fr 1fr;
     .custom-level-first {
       background-color: red;
       grid-column-start: 1;
@@ -157,4 +157,44 @@
       grid-column-start: 2;
       grid-row-start: 2;
     }
+}
+
+.container4 {
+  background: black;
+  width: 1200px;
+  height: 450px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin: 5rem;
+  display: grid;
+  grid-template-columns: 220px 220px 220px auto;
+  grid-template-rows: 1.5fr 1fr;
+  grid-template-areas:
+    "custom-next-first custom-next-first custom-next-first custom-next-second"
+    "custom-next-third custom-next-fourth custom-next-fifth custom-next-second";
+
+  .custom-next-first {
+    background-color: orangered;
+    grid-area: custom-next-first;
+  }
+
+  .custom-next-second {
+    background-color: deepskyblue;
+    grid-area: custom-next-second;
+  }
+
+  .custom-next-third{
+    background-color: saddlebrown;
+    grid-area: custom-next-third;
+  }
+
+  .custom-next-fourth {
+    background-color: green;
+    grid-area: custom-next-fourth;
+  }
+
+  .custom-next-fifth {
+    background-color: cadetblue;
+    grid-area: custom-next-fifth;
+  }
 }
